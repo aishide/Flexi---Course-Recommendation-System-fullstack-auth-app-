@@ -64,7 +64,7 @@ export default function CourseGenerator() {
 
   return (
     <div className="main-page">
-      <h1>AI Course Generator</h1>
+      <h1>AI Course Recommendation</h1>
       <p>Get a custom AI-powered learning path.</p>
 
       <form className="course-form" onSubmit={handleGenerate}>
