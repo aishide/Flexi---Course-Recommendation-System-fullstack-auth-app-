@@ -1,0 +1,85 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+}
+
+.navbar-left img {
+  height: 45px;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 0; /* allows children to shrink */
+  overflow-x: auto; /* scroll if too many items */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap; /* prevent wrapping items inside list */
+  flex-shrink: 0; /* don’t shrink items too much */
+}
+
+.navbar-links li a,
+.logout-btn {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+  flex-shrink: 0; /* keep buttons visible */
+}
+
+.logout-btn {
+  border: 1px solid #ffcc70;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.navbar-links li a:hover,
+.logout-btn:hover {
+  color: #ffcc70;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .navbar-links li a,
+  .logout-btn {
+    width: 100%;
+    text-align: left;
+  }
+}
